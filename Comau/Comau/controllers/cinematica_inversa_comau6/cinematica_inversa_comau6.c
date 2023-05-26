@@ -22,10 +22,10 @@ int main(int argc, char **argv)
    float posicao_atual[7];
    float step_arm = 0.001;
    int motor = 0;
-   //Motor =             -1-  -2-  -3-  -4-   -5-  -6-
-   float vel[7] = {0.0, 1, 1, 1, 1, 3, 1};
+   //Motor =            -1-  -2-  -3-  -4-  -5-  -6-
+   float vel[7] = {0.0, 3.0, 3.0, 3.0, 5.0, 5.0, 3.0 };
    
-   //Definição de Motores
+   //Definição de Motores1
    WbDeviceTag M[7];
    M[1] = wb_robot_get_device("motor1");
    M[2] = wb_robot_get_device("motor2");
@@ -53,7 +53,7 @@ int main(int argc, char **argv)
    //Definição da Posição de trabalho do Robo
    posicao[0][1] = 0.0;
    posicao[0][2] = 0.72;
-   posicao[0][3] = 0.51;
+   posicao[0][3] = -2.0808;
    posicao[0][4] = 0.0;
    posicao[0][5] = -1.24;
    posicao[0][6] = 0.0;
@@ -61,7 +61,7 @@ int main(int argc, char **argv)
    //Definição da Posição de Home do Robo
    posicao[1][1] = 0.0;
    posicao[1][2] = 0.0;
-   posicao[1][3] = 0.0;
+   posicao[1][3] = -1.5708;
    posicao[1][4] = 0.0;
    posicao[1][5] = 0.0;
    posicao[1][6] = 0.0;
@@ -70,14 +70,6 @@ int main(int argc, char **argv)
   while (wb_robot_step(TIME_STEP) != -1) 
   {
   
-    float HOME[6] = {0, 0, -1.5708, 0, 0, 0};
-    
-    for(i=0; i<6; i++)
-    {
-      wb_motor_set_position(M[i+1], HOME[i]);
-    }
-  
-  /*
    key = wb_keyboard_get_key();
      
    if (key >= 0)
@@ -116,7 +108,7 @@ int main(int argc, char **argv)
               wb_motor_set_position(M[i],  posicao[0][i]);
         break;
         
-        case 72: //Posição inicial - Tecla : "H"
+        case 'h': //Posição inicial - Tecla : "H"
           for(i=1;i<7;i++)
               wb_motor_set_position(M[i],  posicao[1][i]);
         break;
@@ -159,12 +151,12 @@ int main(int argc, char **argv)
         break;  
        }
     
-     while(key!=-1)
-        {
-          wb_robot_step(10);
-          key = wb_keyboard_get_key();
-        }
-    }*/
+     // while(key!=-1)
+        // {
+          // wb_robot_step(10);
+          // key = wb_keyboard_get_key();
+        // }
+    }
 };
   
   

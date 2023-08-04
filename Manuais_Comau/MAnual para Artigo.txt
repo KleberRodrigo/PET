@@ -1,0 +1,17 @@
+* Objetivos
+* Diferencial do artigo
+	Sobre o custo do software
+
+* Esqueleto do Artigo
+	Verificar formato das revisões
+* Revisão bibliográfica
+	Pesquisar Algo relacionado
+	Verificar se não há algo que já existe
+	Ver sobre simulador realistico em Robótica industrial (Webots)
+	Programação dinâmica
+	Gêmio virtual
+	Robótica Industrial
+	Programação em Python
+
+
+	
